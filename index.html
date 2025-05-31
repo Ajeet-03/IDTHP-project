@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Encrypt & Decrypt App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+<body>
+    <h1>Secure Image Cryptographic System</h1>
+
+    <div class="tabs">
+        <button class="tab-button active" data-tab="encrypt">Encrypt</button>
+        <button class="tab-button" data-tab="decrypt">Decrypt</button>
+    </div>
+
+    <div class="tab-content active" id="encrypt">
+        <form id="encryptForm">
+            <input type="file" id="fileInput" accept="image/*" required>
+            <input type="text" id="encryptPassword" placeholder="Enter password" required>
+            <button type="submit">Encrypt</button>
+            <textarea id="encryptedOutput" rows="10" placeholder="Encrypted string will appear here"></textarea>
+        </form>
+    </div>
+
+    <div class="tab-content" id="decrypt">
+        <form id="decryptForm">
+            <textarea id="encryptedInput" rows="10" placeholder="Paste encrypted string here" required></textarea>
+            <input type="text" id="decryptPassword" placeholder="Enter password" required>
+            <button type="submit">Decrypt</button>
+        </form>
+        <img id="decryptedImage" style="display:none;" alt="Decrypted Image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
